@@ -54,3 +54,16 @@ sudo yum install -y mongo-10gen-server
 #Start MongoDB
 sudo service mongod start
 ```
+
+###Setting up Web Server
+In your home directory...
+```
+#Get code
+git clone https://github.com/usclug/MessageBoard.git
+
+#Install node packages
+cd MessageBoard
+npm install
+
+#Run server
+node app.js
