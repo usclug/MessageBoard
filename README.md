@@ -40,12 +40,17 @@ sudo make install
 
 ###Install MongoDB
 
-```
+```bash
+#Add MongoDB yum repo 
 echo "[MongoDB]
 name=MongoDB Repository
 baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64
 gpgcheck=0
 enabled=1" | sudo tee -a /etc/yum.repos.d/mongodb.repo
 
+#Install MongoDB
 sudo yum install -y mongo-10gen-server
+
+#Start MongoDB
+sudo service mongod start
 ```
