@@ -61,9 +61,14 @@ In your home directory...
 #Get code
 git clone https://github.com/usclug/MessageBoard.git
 
-#Install node packages
+#Install node packages specified in package.json
 cd MessageBoard
 npm install
 
 #Run server
 node app.js
+```
+
+###Angular.js
+HTML is located in static directory
+Angular code is located in static/js/controllers.js
