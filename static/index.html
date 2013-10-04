@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="msgboardApp">
+  <head>
+    <meta charset="utf-8">
+    <title>LUG Message Board</title>
+    <link href="lib/css/bootstrap.css" rel="stylesheet">
+
+    <style>
+      body { margin-top: 60px; }
+
+      .msg {
+        border-style: solid;
+        border-radius: 10px;
+        border-width: 1px;
+        font-size: 25px;
+      }
+
+      #submit {
+        margin: 10px 0px;
+      }
+    </style>
+  </head>
+
+  <body ng-controller="MsgListCtrl">
+    <!-- Header bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">LUG Message Board</a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <!-- Add your own pages here! -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <div class="container">
+
+      <!-- Sample of what you are typing -->
+      <div class="col-lg-6 col-lg-offset-3 well">
+        {{ currMsg }}
+      </div>
+
+      <!-- Text area to send -->
+      <div class="col-lg-6 col-lg-offset-3">
+        <textarea ng-model="currMsg" class="form-control" rows="3"></textarea>
+        <button ng-click="sendMsg()" type="button" class="btn btn-primary pull-right" id="submit" >Submit</button>
+      </div>
+
+      <ul class="list-unstyled" style="margin-top: 50px">
+        <li ng-repeat="msg in msgs" class="col-lg-6 col-lg-offset-3 well">
+          <h4>{{msg.date}}</h4>
+          <p>{{msg.msg}}</p>
+        </li>
+      </ul>
+
+    </div>
+
+    <script src="lib/js/angular.js"></script>
+    <script src="js/controllers.js"></script>
+  </body>
+</html>
